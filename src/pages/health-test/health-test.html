@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>健康测试|皮肤测试</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <section *ngIf="!toggle">
+        <h3 text-center class="title">
+干性皮肤（Dry - D）<br>VS.<br>油性皮肤（Oil - O）
+</h3>
+        <div class="illustrate" text-justify>{{detail.illustrate}}</div>
+        <button ion-button outline round class="start-btn" (click)="startTest()">开始测试</button>
+    </section>
+    <section *ngIf="toggle">
+        <ion-card *ngFor="let p of detail.paperItems; let i= index">
+            <ion-card-header>
+                {{i+1}}{{p.question}}
+            </ion-card-header>
+            <ion-card-content>
+                <ion-list radio-group>
+                    <ion-item *ngFor="let item of p.items">
+                        <ion-label>{{item.option}}{{item.content}}</ion-label>
+                        <ion-radio [value]="item.option"></ion-radio>
+                    </ion-item>
+                </ion-list>
+            </ion-card-content>
+        </ion-card>
+    </section>
+</ion-content>
