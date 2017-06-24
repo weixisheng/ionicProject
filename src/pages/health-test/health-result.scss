@@ -1,0 +1,70 @@
+page-health-result
+{
+    .tonic-container
+    {
+        display: flex;
+
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .tonic-item
+    {
+        flex: 0 1 auto;
+
+        width: 48%;
+        margin: .2rem;
+
+        border: 1px solid #488aff;
+        .product-img
+        {
+            position: relative;
+
+            overflow: hidden;
+
+            width: 100%;
+            img
+            {
+                width: 100%;
+            }
+        }
+        .product-label
+        {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+
+            height: 40px;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            padding-left: 3px;
+
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+
+            font-size: 15px;
+            line-height: 20px;
+        }
+        .product-price
+        {
+            display: flex;
+
+            justify-content: space-between;
+            span
+            {
+                &:first-child
+                {
+                    padding-left: .2rem;
+
+                    color: #f11;
+                }
+                &:last-child
+                {
+                    padding-right: .2rem;
+
+                    color: #2dd;
+                }
+            }
+        }
+    }
+}

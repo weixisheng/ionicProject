@@ -1,16 +1,41 @@
-page-health-test {
-.title{
-	
-	margin:3rem 0;
-}
-.illustrate{
-	line-height:24px;
-	font-size:15px;
-	letter-spacing:3px;
-	margin-bottom:4rem;
-}
-.start-btn{
-	display:block;
-	margin:0 auto;
-}
+page-health-test
+{
+    .test-title
+    {
+        margin: 3rem 0;
+    }
+    .illustrate
+    {
+        margin-bottom: 4rem;
+
+        letter-spacing: 3px;
+
+        font-size: 15px;
+        line-height: 24px;
+    }
+    .start-btn
+    {
+        display: block;
+
+        margin: 0 auto;
+    }
+    ion-label
+    {
+        white-space: normal;
+    }
+    ion-card
+    {
+        display: none;
+    }
+    ion-card.current
+    {
+        display: block;
+    }
+    .btn-groups
+    {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
 }

@@ -12,7 +12,7 @@ Take the name after `ionic2-starter-`, and that is the name of the template to b
 
 ```bash
 $ sudo npm install -g ionic cordova
-$ ionic start myTutorial tutorial
+$ ionic start ionicProject tutorial
 ```
 
 Then, to run it, cd into `myTutorial` and run:
@@ -24,3 +24,15 @@ $ ionic cordova run ios
 
 Substitute ios for android if not on a Mac.
 
+## 运行
+
+```bash
+npm i
+## 如果报node-sass错误
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+cnpm install node-sass
+
+ionic serve
+## 如果报ionic-scripts错误
+npm install @ionic/app-scripts@latest -S
+```
