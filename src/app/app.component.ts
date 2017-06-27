@@ -4,7 +4,6 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HealthTestPage } from '../pages/health-test/health-test';
 import { ListPage } from '../pages/list/list';
-import {HealthResultPage} from '../pages/health-test/health-result';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
