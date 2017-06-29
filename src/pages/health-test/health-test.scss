@@ -1,38 +1,30 @@
-page-health-test
-{
-    .test-title
-    {
+page-health-test {
+    .card-ios{
+        margin-top: 0;
+    }
+    .test-title {
         margin: 3rem 0;
     }
-    .illustrate
-    {
+    .illustrate {
         margin-bottom: 4rem;
-
         letter-spacing: 3px;
-
         font-size: 15px;
         line-height: 24px;
     }
-    .start-btn
-    {
+    .start-btn {
         display: block;
-
         margin: 0 auto;
     }
-    ion-label
-    {
+    ion-label {
         white-space: normal;
     }
-    ion-card
-    {
+    ion-card {
         display: none;
     }
-    ion-card.current
-    {
+    ion-card.current {
         display: block;
     }
-    .btn-groups
-    {
+    .btn-groups {
         position: fixed;
         right: 0;
         bottom: 0;

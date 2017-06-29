@@ -6,14 +6,19 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
-            <button ion-button block outline color="secondary">{{testResult}}</button>
+    <div class="test-container">
+        <div class="circle-box">
+            <div>
+              <p>你的肤质是</p>
+            <h3>{{testResult}}</h3>
+            </div>
+        </div>
+    </div>
     <ion-card>
-    
-      <ion-card-header>
-       推荐商品
-      </ion-card-header>
-    
-     <ion-card-content>
+        <ion-card-header>
+            推荐商品
+        </ion-card-header>
+        <ion-card-content>
             <div>
                 <ion-segment [(ngModel)]="type">
                     <ion-segment-button value="wet">
@@ -26,41 +31,40 @@
             </div>
             <div [ngSwitch]="type">
                 <div *ngSwitchCase="'wet'" class="tonic-container">
-                   <section *ngFor="let p of wetList" class="tonic-item">
-                   	<div class="product-img">
-                   		<img [src]="p.appPhotoUrl" onerror="src='../../assets/default.png'">
-                   	</div>
-                   	<div class="product-label">
-                   		<ion-badge class="tag-hot" *ngIf="p.hot" color="danger">热</ion-badge>
-                   		<ion-badge class="tag-prom" *ngIf="p.prom" color="secondary">促</ion-badge>
-                   		<ion-badge class="tag-new" *ngIf="p.new">新</ion-badge>
-                   		<span>{{p.productFullName}}</span>
-                   	</div>
-                   	<div class="product-price">
-                   		<span>{{p.productPrice}}</span>
-                   		<span>{{p.productPoint}}</span>
-                   	</div>
-                   </section> 
+                    <section *ngFor="let p of wetList" class="tonic-item">
+                        <div class="product-img">
+                            <img [src]="p.appPhotoUrl" onerror="src='../../assets/default.png'">
+                        </div>
+                        <div class="product-label">
+                            <ion-badge class="tag-hot" *ngIf="p.hot" color="danger">热</ion-badge>
+                            <ion-badge class="tag-prom" *ngIf="p.prom" color="secondary">促</ion-badge>
+                            <ion-badge class="tag-new" *ngIf="p.new">新</ion-badge>
+                            <span>{{p.productFullName}}</span>
+                        </div>
+                        <div class="product-price">
+                            <span>{{p.productPrice}}</span>
+                            <span>{{p.productPoint}}</span>
+                        </div>
+                    </section>
                 </div>
                 <div *ngSwitchCase="'dry'" class="tonic-container">
-                   <section *ngFor="let p of dryList" class="tonic-item">
-                   	<div class="product-img">
-                   		<img [src]="p.appPhotoUrl" onerror="src='../../assets/default.png'">
-                   	</div>
-                   	<div class="product-label">
-                   		<ion-badge class="tag-hot" *ngIf="p.hot">热</ion-badge>
-                   		<ion-badge class="tag-prom" *ngIf="p.prom">促</ion-badge>
-                   		<ion-badge class="tag-new" *ngIf="p.new">新</ion-badge>
-                   		<span>{{p.productFullName}}</span>
-                   	</div>
-                   	<div class="product-price">
-                   		<span>{{p.productPrice}}</span>
-                   		<span>{{p.productPoint}}</span>
-                   	</div>
-                   </section>
+                    <section *ngFor="let p of dryList" class="tonic-item">
+                        <div class="product-img">
+                            <img [src]="p.appPhotoUrl" onerror="src='../../assets/default.png'">
+                        </div>
+                        <div class="product-label">
+                            <ion-badge class="tag-hot" *ngIf="p.hot">热</ion-badge>
+                            <ion-badge class="tag-prom" *ngIf="p.prom">促</ion-badge>
+                            <ion-badge class="tag-new" *ngIf="p.new">新</ion-badge>
+                            <span>{{p.productFullName}}</span>
+                        </div>
+                        <div class="product-price">
+                            <span>{{p.productPrice}}</span>
+                            <span>{{p.productPoint}}</span>
+                        </div>
+                    </section>
                 </div>
             </div>
         </ion-card-content>
-    
     </ion-card>
 </ion-content>

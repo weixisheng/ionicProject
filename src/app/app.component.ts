@@ -3,6 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HealthTestPage } from '../pages/health-test/health-test';
+// import { HealthResultPage } from '../pages/health-test/health-result';
 import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
