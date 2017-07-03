@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Headers,Http} from '@angular/http';
+import {Headers,Http,RequestOptions } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -11,7 +11,8 @@ export class AppService {
 	// private detailUrl = '../assets/detail.json';
 	private recommendUrl1 = this.baseUrl+ '/recommend?poProcessCode=G001&usedCode=JKCSPFCS_B_W&usedType=HEALTH_TEST'
 	private recommendUrl2 = this.baseUrl+'/recommend?poProcessCode=G001&usedCode=JKCSPFCS_B_D&usedType=HEALTH_TEST'
-	private recommendUrl = '../assets/recommend.json';
+	// private recommendUrl = '../assets/recommend.json';
+	private jdRecommend='https://m.jd.com/index/recommend.action?_format_=json&page=1'
 	constructor(private http:Http){}
 
 	getDetail():Promise<any> {
@@ -28,6 +29,13 @@ export class AppService {
 			return r1.concat(r2);
 		}).catch(this.handleError);
 		// return this.http.get(this.recommendUrl).toPromise().then(res => res.json().data).catch(this.handleError);
+	}
+	getProductList():Promise<any>{
+		return this.http.get(this.jdRecommend).toPromise()
+		.then(res=>{
+			
+			return JSON.parse(res.json().recommend).wareInfoList
+		}).catch(this.handleError)
 	}
 	private handleError(error:any):Promise<any>{
 		console.error('错误--',error);

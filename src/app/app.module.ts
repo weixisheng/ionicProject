@@ -6,8 +6,8 @@ import { MyApp } from './app.component';
 
 import { HealthTestPage } from '../pages/health-test/health-test';
 import {HealthResultPage} from '../pages/health-test/health-result'
-import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../pages/list/list';
+import { ProductDetailPage } from '../pages/product/product-detail';
+import { ProductListPage } from '../pages/product/product-list';
 
 import {AppService} from './app.service';
 
@@ -19,8 +19,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HealthTestPage,
     HealthResultPage,
-    ItemDetailsPage,
-    ListPage
+    ProductDetailPage,
+    ProductListPage
   ],
   imports: [
     BrowserModule,
@@ -35,8 +35,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HealthTestPage,
     HealthResultPage,
-    ItemDetailsPage,
-    ListPage
+    ProductDetailPage,
+    ProductListPage
   ],
   providers: [
     StatusBar,

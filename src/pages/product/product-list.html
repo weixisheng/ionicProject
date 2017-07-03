@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>产品列表</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6 *ngFor="let item of items" (click)="itemTapped($event,item)">
+                <img src="{{item.imageurl}}">
+                <p class="product-title" [class.shopTitle]="item.jdShop">{{item.wname}}</p>
+                <p *ngIf="!item.jdShop">
+                    <span class="big-price">{{item.jdPrice}}</span>
+                </p>
+                <div  *ngIf="item.jdShop" class="list-img">
+                <div class="shop-line"></div>
+                  <p><button ion-button outline small color="danger">查看店铺</button></p>
+                  <img *ngFor="let i of item.subWareList.slice(0,2)" [src]="i.imageUrl">
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

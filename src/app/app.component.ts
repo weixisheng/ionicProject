@@ -4,7 +4,7 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HealthTestPage } from '../pages/health-test/health-test';
 // import { HealthResultPage } from '../pages/health-test/health-result';
-import { ListPage } from '../pages/list/list';
+import { ProductListPage } from '../pages/product/product-list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -16,7 +16,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HealthTestPage the root (or first) page
-  rootPage = HealthTestPage;
+  rootPage = ProductListPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -30,7 +30,7 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: '健康测试', component: HealthTestPage },
-      { title: 'My First List', component: ListPage }
+      { title: '产品列表', component: ProductListPage }
     ];
   }
 

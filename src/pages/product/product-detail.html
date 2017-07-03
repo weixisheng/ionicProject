@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>产品详情</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+  <img src="{{selectedItem.imageurl}}">
+    <ion-card-content>
+      <ion-card-title>
+        {{selectedItem.wname}}
+      </ion-card-title>  
+     <ion-row no-padding>
+      <ion-col>
+      <button ion-button clear small color="secondary" icon-left (click)="toggleCollect()">
+        <ion-icon [name]="collectStatus"></ion-icon>
+        收藏
+      </button>
+      </ion-col>
+      <ion-col text-end>
+      <button ion-button clear small  icon-left (click)="share()">
+        <ion-icon name="paper-plane"></ion-icon>
+        分享
+      </button>
+      </ion-col>
+     </ion-row>
+    </ion-card-content>
+  
+  </ion-card>
+</ion-content>
