@@ -12,7 +12,7 @@ export class AppService {
 	private recommendUrl1 = this.baseUrl+ '/recommend?poProcessCode=G001&usedCode=JKCSPFCS_B_W&usedType=HEALTH_TEST'
 	private recommendUrl2 = this.baseUrl+'/recommend?poProcessCode=G001&usedCode=JKCSPFCS_B_D&usedType=HEALTH_TEST'
 	// private recommendUrl = '../assets/recommend.json';
-	private jdRecommend='https://m.jd.com/index/recommend.action?_format_=json&page=1'
+	private jdRecommend=`https://m.jd.com/index/recommend.action?_format_=json&page=`
 	constructor(private http:Http){}
 
 	getDetail():Promise<any> {
@@ -30,10 +30,9 @@ export class AppService {
 		}).catch(this.handleError);
 		// return this.http.get(this.recommendUrl).toPromise().then(res => res.json().data).catch(this.handleError);
 	}
-	getProductList():Promise<any>{
-		return this.http.get(this.jdRecommend).toPromise()
+	getProductList(page:number):Promise<any>{
+		return this.http.get(this.jdRecommend+page).toPromise()
 		.then(res=>{
-			
 			return JSON.parse(res.json().recommend).wareInfoList
 		}).catch(this.handleError)
 	}
