@@ -13,10 +13,11 @@
     <ion-card-content>
       <ion-card-title>
         {{selectedItem.wname}}
-      </ion-card-title>  
+      </ion-card-title> 
+      <p ion-text color="danger">￥{{selectedItem.jdPrice}}</p> 
      <ion-row no-padding>
       <ion-col>
-      <button ion-button clear small color="secondary" icon-left (click)="toggleCollect()">
+      <button ion-button clear small icon-left color="secondary" (click)="toggleCollect()">
         <ion-icon [name]="collectStatus"></ion-icon>
         收藏
       </button>
