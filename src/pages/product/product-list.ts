@@ -8,7 +8,7 @@ import { AppService } from '../../app/app.service'
   selector: 'page-product-list',
   templateUrl: 'product-list.html'
 })
-export class ProductListPage {
+export class ProductListPage implements OnInit {
   items: any;
   page: number = 1;
   loader: any;
