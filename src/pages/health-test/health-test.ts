@@ -36,6 +36,7 @@ export class HealthTestPage implements OnInit{
   			this.showAlert();
   			return;
   		}
+      this.page=0;
   		this.navCtrl.push(HealthResultPage);
   		
   	}

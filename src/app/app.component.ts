@@ -16,7 +16,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HealthTestPage the root (or first) page
-  rootPage = ProductListPage;
+  rootPage = HealthTestPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(

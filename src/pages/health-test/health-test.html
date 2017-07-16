@@ -1,51 +1,48 @@
 <ion-header>
-    <ion-navbar>
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>健康测试</ion-title>
-    </ion-navbar>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>健康测试</ion-title>
+  </ion-navbar>
 </ion-header>
 <ion-content>
-    <section *ngIf="!page" padding>
-        <h3 text-center class="test-title">
-干性皮肤（Dry - D）<br>VS.<br>油性皮肤（Oil - O）
-</h3>
-        <div class="illustrate" text-justify>{{detail.illustrate}}</div>
-        <button ion-button outline round class="start-btn" (click)="startTest()">开始测试</button>
-    </section>
-    <section *ngIf="page">
-        <ion-range [(ngModel)]="page" min="0" [max]="len" disabled>
-        </ion-range>
-        <ion-card *ngFor="let p of detail.paperItems; let i= index" [class.current]="page==i+1">
-            <ion-card-content>
-                <ion-item>
-                    <h2>{{i+1}}、{{p.question}}</h2>
-                </ion-item>
-                <ion-list radio-group>
-                    <!--  <ion-list-header class="text-ios-primary">
-                        {{i+1}}、{{p.question}}
-                    </ion-list-header> -->
-                    <ion-item *ngFor="let item of p.items">
-                        <ion-label>{{item.option}}、{{item.content}}</ion-label>
-                        <ion-radio [value]="item.option"></ion-radio>
-                    </ion-item>
-                </ion-list>
-                <img [src]="p.questionImg" onerror="src='../../assets/logo.jpg'">
-            </ion-card-content>
-        </ion-card>
-        <div text-center class="btn-groups">
-            <button ion-button icon-start *ngIf="page>1&&page<len" (click)="prev()">
-                <ion-icon name="arrow-back"></ion-icon>
-                上一题
-            </button>
-            <button ion-button icon-end *ngIf="page>=1&&page<len" (click)="next()">
-                下一题
-                <ion-icon name="arrow-forward"></ion-icon>
-            </button>
-            <button ion-button color="secondary" round outline *ngIf="page==len" (click)="submit()">
-                提交测试
-            </button>
-        </div>
-    </section>
+  <section *ngIf="!page" padding>
+    <h3 text-center class="test-title">
+        干性皮肤（Dry - D）<br>VS.<br>油性皮肤（Oil - O）
+    </h3>
+    <div class="illustrate" text-justify>{{detail.illustrate}}</div>
+    <button ion-button outline round class="start-btn" (click)="startTest()">开始测试</button>
+  </section>
+  <section *ngIf="page">
+    <ion-range [(ngModel)]="page" min="0" [max]="len" disabled>
+    </ion-range>
+    <ion-card *ngFor="let p of detail.paperItems; let i= index" [class.current]="page==i+1">
+      <ion-card-content>
+        <ion-item>
+          <h2>{{i+1}}、{{p.question}}</h2>
+        </ion-item>
+        <ion-list radio-group>
+          <ion-item *ngFor="let item of p.items">
+            <ion-label>{{item.option}}、{{item.content}}</ion-label>
+            <ion-radio [value]="item.option"></ion-radio>
+          </ion-item>
+        </ion-list>
+        <img [src]="p.questionImg" onerror="src='../../assets/logo.jpg'">
+      </ion-card-content>
+    </ion-card>
+    <div text-center class="btn-groups">
+      <button ion-button icon-start *ngIf="page>1&&page<len" (click)="prev()">
+        <ion-icon name="arrow-back"></ion-icon>
+        上一题
+      </button>
+      <button ion-button icon-end *ngIf="page>=1&&page<len" (click)="next()">
+        下一题
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+      <button ion-button *ngIf="page==len" (click)="submit()">
+        提交测试
+      </button>
+    </div>
+  </section>
 </ion-content>
