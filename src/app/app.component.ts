@@ -17,7 +17,7 @@ export class MyApp {
 
   // make HealthTestPage the root (or first) page
   rootPage = HealthTestPage;
-  pages: Array<{title: string, component: any}>;
+  pages: Array < { title: string, component: any } > ;
 
   constructor(
     public platform: Platform,
